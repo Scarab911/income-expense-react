@@ -8,6 +8,8 @@ __For Learning purpose only__
 - materials
 - context
 - reducer
+- API
+- Speechly
 
 _Full Guide from YT_:
 

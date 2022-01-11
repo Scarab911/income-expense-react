@@ -4,7 +4,7 @@ import useStyles from './styles';
 import { ExpenseTrackerContext } from '../../../context/context';
 import {v4 as uuidv4} from 'uuid';
 import { incomeCategories, expenseCategories } from '../../../constants/categories';
-import { FaceTwoTone } from '@material-ui/icons';
+// import { FaceTwoTone } from '@material-ui/icons';
 import formatDate  from '../../../utils/formatDate';
 
 
@@ -20,8 +20,6 @@ const Form = () => {
     const [formData, setFormData] = useState(initialState);
     const { addTransaction } = useContext(ExpenseTrackerContext);
 
-    console.log(formData.date);
-    
     const createTransaction = () => {
         const transaction = { ...formData, amount: Number(formData.amount), id: uuidv4()};
 

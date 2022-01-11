@@ -1,11 +1,11 @@
-import React, { useState, useContext } from 'react'
-import { TextField, InputLabel, Select, Typography, Grid, Button, FormControl, MenuItem } from '@material-ui/core';
-import useStyles from './styles';
+import { Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField, Typography } from '@material-ui/core';
+import React, { useContext, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { expenseCategories, incomeCategories } from '../../../constants/categories';
 import { ExpenseTrackerContext } from '../../../context/context';
-import {v4 as uuidv4} from 'uuid';
-import { incomeCategories, expenseCategories } from '../../../constants/categories';
 // import { FaceTwoTone } from '@material-ui/icons';
-import formatDate  from '../../../utils/formatDate';
+import formatDate from '../../../utils/formatDate';
+import useStyles from './styles';
 
 
 const initialState={

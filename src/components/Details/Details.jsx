@@ -11,9 +11,9 @@ Chart.register(ArcElement);
 const Details = ({title}) => {
     const classes = useStyles();
     const { chartData, total } = useTransactions(title);
-    // const labels = chartData.labels.map((l) =>{
-    //     return <Typography>{l}</Typography>
-    // })
+    const labels = chartData.labels.map((l) =>{
+        return <Typography>{l}</Typography>
+    })
     const options = {
         legend: {
       display: true,
@@ -29,7 +29,7 @@ const Details = ({title}) => {
             <CardHeader align='center' title={ title } />
             <CardContent>
                 <Typography variant="h5" align='center'>{ total }$</Typography>
-                {/* {labels} */}
+                {labels}
                <Doughnut data={chartData} options={options} />
             </CardContent>
         </Card>

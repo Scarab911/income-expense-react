@@ -1,18 +1,23 @@
+import { stringify } from 'uuid';
+
 const contextReducer = (state, action) => {
-    let transactions;
-    switch (action.type) {
-        case 'DELETE_TRANSACTION':
-            transactions = state.filter((t) => t.id !== action.payload);
+  let transactions;
+  switch (action.type) {
+    case 'DELETE_TRANSACTION':
+      transactions = state.filter((t) => t.id !== action.payload);
 
-            return transactions;
-        case 'ADD_TRANSACTION':
-            transactions = [action.payload, ...state];
+      localStorage.setItem('transactions', JSON.stringify(transactions));
 
-            return transactions;
-        default:
-            break;
-    }
+      return transactions;
+    case 'ADD_TRANSACTION':
+      transactions = [action.payload, ...state];
 
+      localStorage.setItem('transactions', JSON.stringify(transactions));
+
+      return transactions;
+    default:
+      break;
+  }
 };
 
 export default contextReducer;

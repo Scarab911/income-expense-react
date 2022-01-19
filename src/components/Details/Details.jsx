@@ -7,33 +7,35 @@ import useTransactions from '../../useTransactions';
 import { Chart, ArcElement } from 'chart.js';
 Chart.register(ArcElement);
 
+const Details = ({ title }) => {
+  const classes = useStyles();
+  const { chartData, total } = useTransactions(title);
+  const labels = chartData.labels.map((l) => {
+    return <Typography>{l}</Typography>;
+  });
+  // const options = {
+  //     legend: {
+  //   display: true,
+  //   position: "top"
+  //     },
+  //     plugins: {
+  //         display: true
+  //     }
+  // }
 
-const Details = ({title}) => {
-    const classes = useStyles();
-    const { chartData, total } = useTransactions(title);
-    const labels = chartData.labels.map((l) =>{
-        return <Typography>{l}</Typography>
-    })
-    const options = {
-        legend: {
-      display: true,
-      position: "top"
-        },
-        plugins: {
-            display: true
-        }
-    }
+  console.log(chartData);
+  return (
+    <Card className={title === 'Income' ? classes.income : classes.expense}>
+      <CardHeader align="center" title={title} />
+      <CardContent>
+        <Typography variant="h5" align="center">
+          {total}$
+        </Typography>
+        {/* {labels} */}
+        <Doughnut data={chartData} />
+      </CardContent>
+    </Card>
+  );
+};
 
-    return (
-        <Card className={title === 'Income' ? classes.income: classes.expense}>
-            <CardHeader align='center' title={ title } />
-            <CardContent>
-                <Typography variant="h5" align='center'>{ total }$</Typography>
-                {labels}
-               <Doughnut data={chartData} options={options} />
-            </CardContent>
-        </Card>
-    )
-}
-
-export default Details
+export default Details;

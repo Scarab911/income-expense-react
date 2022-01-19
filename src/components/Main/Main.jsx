@@ -11,6 +11,7 @@ import { ExpenseTrackerContext } from '../../context/context';
 import useStyles from './styles';
 import Form from './Form/Form';
 import List from './List/List';
+import InfoCard from '../../Infocard/InfoCard';
 
 const Main = () => {
   const classes = useStyles();
@@ -18,10 +19,7 @@ const Main = () => {
   return (
     <div>
       <Card className={classes.root}>
-        <CardHeader
-          title="Income Expense Tracker"
-          subheader="Powered by Speechly"
-        />
+        <CardHeader title="Expense Tracker" subheader="Powered by Speechly" />
         <CardContent>
           <Typography align="center" variant="h5">
             Total Balance {balance}$
@@ -30,8 +28,7 @@ const Main = () => {
             variant="subtitle1"
             style={{ lineHeight: '1.5em', marginTop: '20px' }}
           >
-            {/* Info Card... */}
-            Try saying: add income for 100$ in category salary for Monday
+            <InfoCard />
           </Typography>
           <Divider />
           <Form />

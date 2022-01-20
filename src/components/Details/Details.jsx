@@ -10,9 +10,9 @@ Chart.register(ArcElement);
 const Details = ({ title }) => {
   const classes = useStyles();
   const { chartData, total } = useTransactions(title);
-  const labels = chartData.labels.map((l) => {
-    return <Typography>{l}</Typography>;
-  });
+  // const labels = chartData.labels.map((l) => {
+  //   return <Typography>{l}</Typography>;
+  // });
   // const options = {
   //     legend: {
   //   display: true,

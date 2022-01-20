@@ -1,5 +1,3 @@
-import { stringify } from 'uuid';
-
 const contextReducer = (state, action) => {
   let transactions;
   switch (action.type) {

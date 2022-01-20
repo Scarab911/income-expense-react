@@ -1,8 +1,8 @@
 _MY FIRST REACT APP_
 
-__For Learning purpose only__
+**For Learning purpose only**
 
-- Creatting a app for expense tracker.
+- Creatting a app of expense tracker.
 - React
 - hooks
 - materials
